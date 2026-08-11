@@ -1,0 +1,15 @@
+{
+  "name": "dagrealty-listings-api",
+  "main": "src/index.js",
+  "compatibility_date": "2025-04-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "MONGODB_DB": "dagrealty"
+  },
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS_BUCKET",
+      "bucket_name": "dagrealty"
+    }
+  ]
+}

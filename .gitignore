@@ -1,0 +1,9 @@
+.DS_Store
+.env
+tools/mongo-tools/.env
+scraper/.env
+__pycache__/
+*.pyc
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars

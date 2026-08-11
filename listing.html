@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing | David A Gardner Realty</title>
+<script>
+  (function () {
+    var t = localStorage.getItem("dagrealtyTheme") || "dark";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="wrap section" id="listing-root">
+  <a class="back-link" href="listings.html">&larr; Back to all listings</a>
+
+  <div class="gallery" id="gallery"></div>
+
+  <div class="listing-detail-header">
+    <div>
+      <div class="price" id="listing-price"></div>
+      <div class="addr" id="listing-address"></div>
+    </div>
+    <span class="status-badge" id="listing-status"></span>
+  </div>
+
+  <div class="fact-strip" id="listing-facts"></div>
+
+  <div class="detail-grid">
+    <div>
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <div id="section-overview"></div>
+      </div>
+      <div class="detail-section">
+        <h3>Interior</h3>
+        <div id="section-interior"></div>
+      </div>
+      <div class="detail-section">
+        <h3>Exterior &amp; Lot</h3>
+        <div id="section-exterior"></div>
+      </div>
+      <div class="detail-section">
+        <h3>Schools</h3>
+        <div id="section-schools"></div>
+      </div>
+      <div class="detail-section">
+        <h3>Taxes</h3>
+        <div id="section-taxes"></div>
+      </div>
+      <div id="section-rooms"></div>
+      <div class="detail-section">
+        <h3>Description</h3>
+        <div id="section-description"></div>
+      </div>
+      <div class="detail-section" id="section-amenities-wrap">
+        <h3>Amenities &amp; Features</h3>
+        <div id="section-amenities"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sidebar-card">
+        <h3>Interested in this property?</h3>
+        <p>David A Gardner</p>
+        <p>Apex Realty Group</p>
+        <p><a href="tel:8145997860">814-599-7860</a></p>
+        <a class="button" href="contact.html">Contact David</a>
+        <a class="button secondary" id="virtual-tour-link" target="_blank" rel="noopener" style="display:none;margin-top:8px;">View Virtual Tour</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<site-footer></site-footer>
+
+<script src="js/theme.js"></script>
+<script src="js/components.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/listing-detail.js"></script>
+</body>
+</html>

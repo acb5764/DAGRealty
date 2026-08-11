@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listings | David A Gardner Realty</title>
+<meta name="description" content="Browse current real estate listings from David A Gardner, Apex Realty Group, Huntingdon PA.">
+<script>
+  (function () {
+    var t = localStorage.getItem("dagrealtyTheme") || "dark";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="wrap section">
+  <div class="section-head">
+    <h2>Current Listings</h2>
+  </div>
+
+  <div class="filter-bar">
+    <div class="field">
+      <label for="filter-type">Property Type</label>
+      <select id="filter-type">
+        <option value="">All Types</option>
+        <option value="Residential">Residential</option>
+        <option value="Multi-Unit">Multi-Unit</option>
+        <option value="Land">Land</option>
+        <option value="Farm">Farm</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-city">City</label>
+      <select id="filter-city">
+        <option value="">All Cities</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-min-price">Min Price</label>
+      <input type="number" id="filter-min-price" placeholder="Any" min="0" step="1000">
+    </div>
+    <div class="field">
+      <label for="filter-max-price">Max Price</label>
+      <input type="number" id="filter-max-price" placeholder="Any" min="0" step="1000">
+    </div>
+    <div class="field">
+      <label for="filter-min-beds">Min Beds</label>
+      <select id="filter-min-beds">
+        <option value="">Any</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="filter-sort">Sort By</label>
+      <select id="filter-sort">
+        <option value="price_asc">Price: Low to High</option>
+        <option value="price_desc">Price: High to Low</option>
+        <option value="sqft_desc">Square Footage</option>
+        <option value="acreage_desc">Acreage</option>
+        <option value="year_desc">Year Built</option>
+        <option value="newest">Recently Updated</option>
+      </select>
+    </div>
+    <button class="reset" id="filter-reset" type="button">Reset filters</button>
+  </div>
+
+  <div class="results-count" id="results-count"></div>
+  <div class="listing-grid" id="listing-grid"></div>
+</main>
+
+<site-footer></site-footer>
+
+<script src="js/theme.js"></script>
+<script src="js/components.js"></script>
+<script src="js/listing-card.js"></script>
+<script src="js/listings.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David A Gardner Realty | Huntingdon, PA</title>
+<meta name="description" content="David A Gardner, Apex Realty Group — real estate listings in Huntingdon, PA and the surrounding area.">
+<script>
+  (function () {
+    var t = localStorage.getItem("dagrealtyTheme") || "dark";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<site-header></site-header>
+
+<section class="hero">
+  <h1>Real estate in Huntingdon County, done right.</h1>
+  <p>David A Gardner of Apex Realty Group helps buyers and sellers across Huntingdon, Mt. Union, Orbisonia, and the surrounding area — homes, land, farms, and commercial properties.</p>
+  <a class="button" href="listings.html">Browse Listings</a>
+  <a class="button secondary" href="contact.html" style="margin-left:12px;">Contact David</a>
+</section>
+
+<main class="wrap section">
+  <div class="section-head">
+    <h2>Featured Listings</h2>
+    <a href="listings.html">View all listings &rarr;</a>
+  </div>
+  <div class="listing-grid" id="featured-grid"></div>
+</main>
+
+<site-footer></site-footer>
+
+<script src="js/theme.js"></script>
+<script src="js/components.js"></script>
+<script src="js/listing-card.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
