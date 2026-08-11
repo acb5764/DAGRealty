@@ -1,5 +1,5 @@
 (function () {
-  var LISTINGS_API_URL = "REPLACE_WITH_WORKER_URL"; // TODO: set after `wrangler deploy` (see worker/README.md)
+  var LISTINGS_API_URL = "https://dagrealty-listings-api.aaron-d6f.workers.dev";
   var MAX_FEATURED = 6;
 
   function init() {
