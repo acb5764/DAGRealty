@@ -42,6 +42,8 @@ mcp = FastMCP("dagrealty-mongo")
 def _clean_listing(doc: dict) -> dict:
     doc = strip_internal_id(doc)
     doc.pop("_source_photo_urls", None)
+    if "last_scrape_run_id" in doc:
+        doc["last_scrape_run_id"] = str(doc["last_scrape_run_id"])
     return doc
 
 
