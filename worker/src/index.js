@@ -68,8 +68,11 @@ async function withListings(env, fn) {
   // worker/src/index.js for the reasoning (Workers isolates aren't a
   // reliable place to keep a pooled TCP socket alive between invocations,
   // and this endpoint's traffic is far too low for that tradeoff to matter).
+  // No directConnection here -- unlike EMM's URI, ours is an SRV-form Atlas
+  // string (mongodb+srv://), which resolves to multiple hosts and is
+  // incompatible with directConnection (confirmed via `wrangler tail`:
+  // "MongoAPIError: SRV URI does not support directConnection").
   const client = await MongoClient.connect(env.MONGODB_URI, {
-    directConnection: true,
     maxPoolSize: 1,
     minPoolSize: 0,
     serverSelectionTimeoutMS: 5000,
