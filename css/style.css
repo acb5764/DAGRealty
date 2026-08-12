@@ -121,9 +121,15 @@ img {
 }
 
 .theme-toggle {
-  background: none;
+  display: flex;
   border: 1px solid var(--border);
   border-radius: 999px;
+  overflow: hidden;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
   color: var(--text-muted);
   cursor: pointer;
   padding: 6px 12px;
@@ -131,9 +137,13 @@ img {
   font-family: inherit;
 }
 
-.theme-toggle:hover {
-  border-color: var(--accent);
+.theme-toggle button:hover {
   color: var(--text);
+}
+
+.theme-toggle button.active {
+  background: var(--accent);
+  color: var(--accent-text);
 }
 
 .nav-toggle {

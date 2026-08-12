@@ -1,6 +1,11 @@
 (function () {
   function apply(theme) {
     document.documentElement.setAttribute("data-theme", theme);
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      var active = btn.getAttribute("data-theme-set") === theme;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
   }
 
   function current() {
@@ -8,12 +13,13 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var toggle = document.querySelector("[data-theme-toggle]");
-    if (!toggle) return;
-    toggle.addEventListener("click", function () {
-      var next = current() === "dark" ? "light" : "dark";
-      localStorage.setItem("dagrealtyTheme", next);
-      apply(next);
+    apply(current());
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var next = btn.getAttribute("data-theme-set");
+        localStorage.setItem("dagrealtyTheme", next);
+        apply(next);
+      });
     });
   });
 })();
