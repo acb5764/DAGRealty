@@ -26,7 +26,10 @@
         '<button class="nav-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>' +
         "<nav>" +
         navHtml +
-        '<button class="theme-toggle" data-theme-toggle type="button">Toggle theme</button>' +
+        '<div class="theme-toggle" role="group" aria-label="Theme">' +
+        '<button data-theme-set="light" type="button">Light</button>' +
+        '<button data-theme-set="dark" type="button">Dark</button>' +
+        "</div>" +
         "</nav>" +
         "</div>" +
         "</header>";
