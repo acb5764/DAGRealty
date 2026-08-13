@@ -175,6 +175,12 @@ img {
   .site-header nav.open {
     display: flex;
   }
+  .site-header .theme-toggle {
+    align-self: flex-start;
+  }
+  .theme-toggle button {
+    padding: 8px 14px;
+  }
 }
 
 /* Footer */
