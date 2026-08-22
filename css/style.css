@@ -211,10 +211,6 @@ img {
   justify-content: space-between;
 }
 
-.site-footer strong {
-  color: var(--text);
-}
-
 .site-footer .cols {
   display: flex;
   gap: 40px;
