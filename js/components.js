@@ -50,7 +50,7 @@
         '<footer class="site-footer">' +
         '<div class="wrap">' +
         "<div>" +
-        "<strong>David A Gardner</strong><br>" +
+        "David A Gardner<br>" +
         "Apex Realty Group<br>" +
         "1305 Mifflin St, Huntingdon, PA 16652<br>" +
         'Cell: <a href="tel:8145997860">814-599-7860</a> &middot; ' +
