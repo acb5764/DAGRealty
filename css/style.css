@@ -94,23 +94,19 @@ img {
 .site-header .brand {
   display: flex;
   flex-direction: column;
-  font-weight: 700;
-  font-size: 1.15rem;
   color: var(--text);
   letter-spacing: 0.01em;
   white-space: nowrap;
   line-height: 1.25;
 }
 
-.site-header .brand span {
-  color: var(--accent);
+.site-header .brand-line {
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
-.site-header .brand small {
-  font-weight: 500;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
+.site-header .brand .accent {
+  color: var(--accent);
 }
 
 .site-header nav {
