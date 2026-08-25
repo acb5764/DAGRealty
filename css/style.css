@@ -95,22 +95,11 @@ img {
   display: flex;
   flex-direction: column;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--text);
   letter-spacing: 0.01em;
   white-space: nowrap;
-  line-height: 1.25;
-}
-
-.site-header .brand span {
-  color: var(--accent);
-}
-
-.site-header .brand small {
-  font-weight: 500;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
+  line-height: 1.35;
 }
 
 .site-header nav {

@@ -22,7 +22,7 @@
       this.innerHTML =
         '<header class="site-header">' +
         '<div class="bar">' +
-        '<a class="brand" href="index.html">David A Gardner <span>Realty</span><small>Apex Realty Group</small></a>' +
+        '<a class="brand" href="index.html"><span>David A Gardner</span><span>Apex Realty Group</span></a>' +
         '<button class="nav-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>' +
         "<nav>" +
         navHtml +
