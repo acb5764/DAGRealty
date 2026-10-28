@@ -36,7 +36,29 @@ class RateLimitedSession:
         self._last_request_at = 0.0
         self._robots = urllib.robotparser.RobotFileParser()
         self._robots.set_url(urljoin(base, "/robots.txt"))
-        self._robots.read()
+        self._read_robots()
+
+    def _read_robots(self) -> None:
+        # Deliberately not self._robots.read() -- it always fetches via
+        # urllib.request.urlopen() with Python's bare default User-Agent,
+        # ignoring the descriptive one set above. usamls.net's WAF 403s
+        # that generic UA string specifically, and RobotFileParser treats
+        # ANY 401/403 on robots.txt itself as "disallow everything" (see
+        # its source) -- even though the site's actual published robots.txt
+        # is wide open (`Allow: /`) once fetched with a real UA, same as
+        # every other page this session fetches. Fetching the text
+        # ourselves and handing it to .parse() avoids that false block.
+        try:
+            resp = self.session.get(self._robots.url, timeout=20)
+            resp.raise_for_status()
+        except requests.RequestException:
+            # A genuine failure to reach robots.txt (not the UA-sniffing
+            # false-403 above, which raise_for_status would also catch) --
+            # fall back to the same conservative default RobotFileParser
+            # itself uses on a real error.
+            self._robots.disallow_all = True
+            return
+        self._robots.parse(resp.text.splitlines())
 
     def _check_allowed(self, url: str) -> None:
         if not self._robots.can_fetch(self.session.headers["User-Agent"], url):
